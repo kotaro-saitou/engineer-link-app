@@ -1,0 +1,4 @@
+<p><%= @user.name %></p>
+<% if @user.avatar.attached? %>
+  <%= image_tag @user.avatar %>
+<% end %>
