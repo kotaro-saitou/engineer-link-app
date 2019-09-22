@@ -5,4 +5,7 @@ class Tag < ApplicationRecord
   validates :content, presence: true
   
   has_one_attached :image
+  
+  has_many :tag_relations
+  has_many :added_user, through: :tag_relations, source: :user
 end

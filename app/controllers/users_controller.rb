@@ -46,6 +46,11 @@ class UsersController < ApplicationController
     end
   end
   
+  def add_tag
+    @user = User.find(params[:id])
+    @adding = @user.adding_tags
+  end
+  
   private
   
     def user_params

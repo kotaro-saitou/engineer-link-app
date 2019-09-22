@@ -1,0 +1,3 @@
+<% tags.each do |tag| %>
+  <a href="<%= tag_path(tag) %>"><%= image_tag tag.image, size: '100x100' %></a>
+<% end %>
