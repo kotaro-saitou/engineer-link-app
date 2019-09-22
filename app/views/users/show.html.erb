@@ -1,4 +1,26 @@
-<p><%= @user.name %></p>
-<% if @user.avatar.attached? %>
+<div class="text-center">
+  <% if @user.avatar.attached? %>
   <%= image_tag @user.avatar %>
-<% end %>
+    <% end %>
+  <p><%= @user.name %></p>
+  <% if current_user.id == @user.id  %>
+    <%= link_to 'プロフィール編集', edit_user_path(current_user), class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col-6">
+    <% unless @user.profile.nil? %>
+      <%= @user.profile.gsub(/\r\n|\r|\n/, "<br />").html_safe %>
+    <% else %>
+      <% if current_user.id == @user.id %>
+        <p>プロフィールを入力しませんか？</p>
+      <% else %>
+        <p>プロフィールは未入力です</p>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="col-6">
+    <%= render 'posts/posts', posts: @posts %>
+  </div>
+</div>
