@@ -3,7 +3,7 @@
   <%= image_tag @user.avatar %>
     <% end %>
   <p><%= @user.name %></p>
-  <% if current_user.id == @user.id  %>
+  <% if logged_in? && current_user.id == @user.id  %>
     <%= link_to 'プロフィール編集', edit_user_path(current_user), class: 'btn btn-primary' %>
   <% end %>
 </div>

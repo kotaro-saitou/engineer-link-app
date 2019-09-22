@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :new, :create, :edit, :update]
   
   resources :posts, only: [:index, :show, :create, :destroy]
+  resources :tags, only: [:index, :show, :create, :destroy]
 end

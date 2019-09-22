@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-8 offset-2">
+    <div class="text-center">
+      <% if @tag.image.attached? %>
+      <%= image_tag @tag.image, size: '300x300' %>
+        <% end %>
+      <p><%= @tag.title %></p>
+    
+      <p><%= @tag.content %></p>
+      
+      <% if logged_in? && current_user.id == @tag.user.id %>
+        <%= link_to 'タグ削除', tag_path(@tag), method: :delete, class: 'btn btn-danger' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

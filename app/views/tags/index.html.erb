@@ -1,0 +1,33 @@
+<div class="row">
+  <aside class="col-sm-6 offset-sm-3">
+    <% if logged_in? %>
+      <%= form_with(model: @tag, local: true) do |f| %>
+        <div class="form-group"> 
+          <%= f.text_field :title, class: 'form-control' %>
+          <%= f.text_field :content, class: 'form-control' %>
+          <%= f.file_field :image %>
+        </div>
+        <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
+      <% end %>
+    <% else %>
+      <p>ログインしよ</p>
+    <% end %>
+  </aside>
+</div>
+<div class='row'>
+  <% @tags.each do |tag| %>
+    <div class="col-lg-2 col-md-3 col-sm-6 col-xs-8">
+      <div class="card">
+        <div class="card-header">
+          <%= link_to tag.title, tag_path(tag) %>
+        </div>
+        <div class="card-body">
+          <%= image_tag tag.image, size: '100x100' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+  
+
+
