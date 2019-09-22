@@ -1,0 +1,24 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+header{
+  border-top:3px solid #000;
+}
+
+.headerNavBtn {
+  text-align:center;
+  height:3em;
+  line-height:3em;
+  color:#5F5F5F;
+  font-size:16px;
+  margin-bottom: 20px;
+}
+
+.headerNavBox a{
+  text-decoration: none;
+  color: #666;
+}
+
+.headerNavBtn:hover{
+  background:#EEE;
+}
