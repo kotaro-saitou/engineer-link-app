@@ -1,19 +1,4 @@
-<div class="row">
-  <aside class="col-sm-6 offset-sm-3">
-    <% if logged_in? %>
-      <%= form_with(model: @tag, local: true) do |f| %>
-        <div class="form-group"> 
-          <%= f.text_field :title, class: 'form-control' %>
-          <%= f.text_field :content, class: 'form-control' %>
-          <%= f.file_field :image %>
-        </div>
-        <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
-      <% end %>
-    <% else %>
-      <p>ログインしよ</p>
-    <% end %>
-  </aside>
-</div>
+<h2 class='text-center tag'>タグ一覧</h2>
 <div class='row'>
   <% @tags.each do |tag| %>
     <div class="col-lg-2 col-md-3 col-sm-6 col-xs-8">
@@ -27,6 +12,26 @@
       </div>
     </div>
   <% end %>
+</div>
+
+<div class="row tag-form">
+  <aside class="col-sm-6 offset-sm-3">
+    <% if logged_in? %>
+      <%= form_with(model: @tag, local: true) do |f| %>
+        <div class="form-group"> 
+          <%= f.label :title, 'タグ名' %>
+          <%= f.text_field :title, class: 'form-control' %>
+          <%= f.label :content, '紹介文' %>
+          <%= f.text_field :content, class: 'form-control' %>
+          <%= f.label :image, '画像' %>
+          <%= f.file_field :image %>
+        </div>
+        <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
+      <% end %>
+    <% else %>
+      <p>ログインしよ</p>
+    <% end %>
+  </aside>
 </div>
   
 
