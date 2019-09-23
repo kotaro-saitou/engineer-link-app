@@ -1,5 +1,14 @@
 <% if logged_in? %>
-  <p>ログイン完了ユーザ: <%= current_user.name %></p>
+  <div class='text-center'>
+    <%= image_tag current_user.avatar, size: '75x75', class: 'avatar' %>
+    <h4><%= current_user.name %></h4>
+  </div>
+  
+  <ul class="nav nav-tabs nav-justified mb-3 top-nav-tabs">
+    <li class="nav-item"><a href="#" class="nav-link">メッセージ</a></li>
+    <li class="nav-item"><a href="#" class="nav-link">いいねされてる</a></li>
+  </ul>
+  
 <% else %>
   <div class="center jumbotron">
     <div class="text-center">
@@ -8,6 +17,4 @@
     </div>
   </div>
 <% end %>
-<div class="main">
-  <%= link_to '投稿からユーザーを探す', posts_path, class: 'btn btn-lg btn-success' %>
-</div>
+

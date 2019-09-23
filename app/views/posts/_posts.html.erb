@@ -1,7 +1,7 @@
 <ul class="list-unstyled">
   <% posts.each do |post| %>
     <li class="media mb-3">
-      <%= image_tag post.user.avatar, size: '50x50' %>
+      <%= image_tag post.user.avatar, size: '50x50', class: 'avatar' %>
       <div class="media-body">
         <div>
           <%= link_to post.user.name, user_path(post.user) %> <span class="text-muted">posted at <%= post.created_at %></span>

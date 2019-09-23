@@ -1,0 +1,2 @@
+module TagRelationsHelper
+end

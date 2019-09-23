@@ -1,0 +1,31 @@
+<div class="headerNav">
+  <div class="container">
+    <div class="row headerNavBox">
+      <a href="<%= root_path %>" class="col-xs-6 col-sm-3 headerNavBtn">
+        トップページ
+      </a>
+      
+      <a href="#" class="col-xs-6 col-sm-3 headerNavBtn">
+        メッセージ
+      </a>
+      
+      <div class="col-xs-6 col-sm-3 headerNavBtn" >
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">ユーザーを探す</a>
+        <ul class="dropdown-menu dropdown-menu-right">
+          <li class="dropdown-item"><%= link_to 'タグから探す', tags_path %></li>
+          <li class="dropdown-item"><%= link_to 'つぶやきから探す', posts_path %></li>
+        </ul>
+      </div>
+      
+      <div class="col-xs-6 col-sm-3 headerNavBtn" >
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
+        <ul class="dropdown-menu dropdown-menu-right">
+          <li class="dropdown-item"><%= link_to 'プロフィール', user_path(current_user) %></li>
+          <li class="dropdown-divider"></li>
+          <li class="dropdown-item"><%= link_to 'ログアウト', logout_path, method: :delete %></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
