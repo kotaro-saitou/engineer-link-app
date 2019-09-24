@@ -1,11 +1,15 @@
 <div class="text-center">
   <% if @user.avatar.attached? %>
     <%= image_tag @user.avatar %>
-      <% end %>
+  <% end %>
     <p><%= @user.name %></p>
+  <% if current_user.id != @user.id %>
+    <%= render 'relationships/follow_button', user: @user %>
+  <% end %>
   <% if logged_in? && current_user.id == @user.id  %>
     <%= link_to 'プロフィール編集', edit_user_path(current_user), class: 'btn btn-primary' %>
   <% end %>
+  
 </div>
 
 <div class="row">
