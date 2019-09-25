@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   resources :tags, only: [:index, :show, :create, :destroy]
   resources :tag_relations, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+  resources :messages, only: [:index, :show]
 end
