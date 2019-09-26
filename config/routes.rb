@@ -19,4 +19,7 @@ Rails.application.routes.draw do
   resources :tag_relations, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
   resources :messages, only: [:index, :show]
+  
+  mount ActionCable.server => '/cable'
+  
 end

@@ -1,4 +1,5 @@
-<% if current_user.id != @user.id && logged_in? %>
+<!-- <h3 class="text-center messagebox-user"><%= @user.name %></h3> -->
+<% if logged_in? %>
   <section class="message_box">
     <div id="messages">
       <%= render @messages %>
@@ -9,10 +10,12 @@
     $("div.message").each( function() {
       height += ($(this).height());
     });
-    $('section.message_box').scrollTop(height);
+    $('section.message_box').scrollTop(height + 700);
   </script>
+  
   <div class="message_form">
-   <%= render 'messages/message_form',
-     {from_user: current_user, to_user: @user, room_id: @room_id} %>
+    <%= render 'messages/message_form',
+      {from_user: current_user, to_user: @user, room_id: @room_id} %>
   </div>
+  
 <% end %>

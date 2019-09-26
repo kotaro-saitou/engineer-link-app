@@ -5,7 +5,10 @@ class MessagesController < ApplicationController
   def show
     @user = User.find(params[:id])
     @room_id = message_room_id(current_user, @user)
-    @messages = Message.room_id_message(@room_id)
+    #if params[:content] != nil
+      #Message.create!(content: params[:content], from_id: current_user.id, to_id: @user.id, room_id: @room_id)
+    #end
+    @messages = Message.recent_in_room(@room_id)
   end
   
   private

@@ -1,14 +1,14 @@
 <% if logged_in? %>
   <div class='text-center'>
-    <%= image_tag current_user.avatar, size: '75x75', class: 'avatar' %>
+    <%= image_tag current_user.avatar, size: '75x75', class: 'avatar' if current_user.avatar.attached?%>
     <h4><%= current_user.name %></h4>
   </div>
   
   <ul class="nav nav-tabs nav-justified mb-3 top-nav-tabs">
-    <li class="nav-item"><a href="<%= root_path %>" class="nav-link">メッセージ</a></li>
+    <li class="nav-item"><a href="<%= root_path %>" class="nav-link">マッチング</a></li>
     <li class="nav-item"><a href="<%= followers_user_path(current_user) %>" class="nav-link">いいねされてる</a></li>
   </ul>
-  <%= render 'users/users', users: @users %>
+  <%= render 'messages/message_top', users: @users %>
   
 <% else %>
   <div class="center jumbotron">
@@ -18,4 +18,3 @@
     </div>
   </div>
 <% end %>
-

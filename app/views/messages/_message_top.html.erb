@@ -4,11 +4,11 @@
       <div class="col-lg-2 col-md-3 col-sm-6 col-xs-8 text-center">
         <div class="card mb-3">
           <div class="card-header">
-              <%= link_to user.name, user_path(user) %>
+            <%= link_to user.name, message_path(user) %>
           </div>
           <div class="card-body">
             <% if user.avatar.attached? %>
-              <%= image_tag user.avatar, size: '75x75' %>
+              <%= image_tag user.avatar, size: '100x100' %>
             <% else %>
               No image
             <% end %>
@@ -18,5 +18,3 @@
     <% end %>
   </div>
 <% end %>
-
-
