@@ -1,3 +1,18 @@
-<% tags.each do |tag| %>
-  <a href="<%= tag_path(tag) %>"><%= image_tag tag.image, size: '100x100' %></a>
-<% end %>
+<div class='row'>
+  <% tags.each do |tag| %>
+    <div class="col-lg-2 col-md-3 col-sm-6 col-xs-6 text-center">
+      <div class="card mb-3">
+        <div class="card-header">
+            <%= link_to tag.title, tag_path(tag) %>
+        </div>
+        <div class="card-body">
+          <% if tag.image.attached? %>
+            <%= image_tag tag.image, size: '150x150' %>
+          <% else %>
+            No image
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

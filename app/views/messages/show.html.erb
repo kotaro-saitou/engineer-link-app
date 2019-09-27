@@ -1,0 +1,27 @@
+<h3 class="text-center messagebox-user"><%= @user.name %></h3>
+<div class="text-center">
+  <% if @user.avatar.attached? %>
+    <%= image_tag @user.avatar,size: '50x50' %>
+  <% end %>
+</div>
+
+<% if logged_in? %>
+  <section class="message_box">
+    <div id="messages">
+      <%= render @messages %>
+    </div>
+  </section>
+  <script type="text/javascript">
+    var height = 0;
+    $("div.message").each( function() {
+      height += ($(this).height());
+    });
+    $('section.message_box').scrollTop(height + 700);
+  </script>
+  
+  <div class="message_form">
+    <%= render 'messages/message_form',
+      {from_user: current_user, to_user: @user, room_id: @room_id} %>
+  </div>
+  
+<% end %>

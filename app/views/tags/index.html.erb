@@ -1,18 +1,5 @@
 <h2 class='text-center tag'>タグ一覧</h2>
-<div class='row'>
-  <% @tags.each do |tag| %>
-    <div class="col-lg-2 col-md-3 col-sm-6 col-xs-8">
-      <div class="card">
-        <div class="card-header">
-          <%= link_to tag.title, tag_path(tag) %>
-        </div>
-        <div class="card-body">
-          <%= image_tag tag.image, size: '100x100' %>
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div>
+<%= render 'tags/tags', tags:@tags %>
 
 <div class="row tag-form">
   <aside class="col-sm-6 offset-sm-3">

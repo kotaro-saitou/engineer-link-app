@@ -1,6 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body , html {
+  height: 100%;
+}
+
 header{
   border-top:3px solid #000;
 }
@@ -42,4 +46,53 @@ a{
 
 .avatar{
   margin-right: 10px;
+}
+
+section.message_box {
+  padding: 10px;
+  //border: 1px solid $gray-light;
+  overflow: scroll;
+  #messages {
+    height: 500px;
+  }
+}
+
+div.message_form {
+  //width: 100vw;
+  //position: relative;
+  //left: 50%;
+  //right: 50%;
+  //margin-left: -50vw;
+  //margin-right: -50vw;
+  padding-top: 10px;
+}
+
+#message_sender {
+  font-size: 1.1em;
+}
+
+#message_content {
+  font-size: 1.0em;
+}
+
+#form{
+  margin-left: 30px;
+}
+
+.messagebox-user{
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: #D3D3D3;
+  height: 50px;
+  padding-top: 15px;
+  color: #000033;
+}
+
+#message_content{
+  font-family: "serif";
+  border-bottom: 1px solid #EEEEEE;
 }

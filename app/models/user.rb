@@ -18,6 +18,11 @@ class User < ApplicationRecord
   has_many :reverses_of_relationship, class_name: 'Relationship', foreign_key: 'follow_id'
   has_many :followers, through: :reverses_of_relationship, source: :user
   
+  has_many :from_messages, class_name: "Message", foreign_key: "from_id", dependent: :destroy
+  has_many :to_messages, class_name: "Message", foreign_key: "to_id", dependent: :destroy
+  has_many :sent_messages, through: :from_messages, source: :from
+  has_many :received_messages, through: :to_messages, source: :to
+  
   def adding(tag)
     unless self.tag_relations.include?(tag)
       self.tag_relations.find_or_create_by(tag_id: tag.id)
@@ -46,6 +51,10 @@ class User < ApplicationRecord
 
   def following?(other_user)
     self.followings.include?(other_user)
+  end
+  
+  def send_message(other_user, room_id, content)
+    from_messages.create!(to_id: other_user.id, room_id: room_id, content: content)
   end
 
 end
