@@ -1,13 +1,13 @@
 <ul class="list-unstyled">
   <% posts.each do |post| %>
-    <li class="media mb-3">
+    <li class="media mb-3 tweet">
       <%= image_tag post.user.avatar, size: '50x50', class: 'avatar' %>
       <div class="media-body">
         <div>
-          <%= link_to post.user.name, user_path(post.user) %> <span class="text-muted">posted at <%= post.created_at %></span>
+          <a href="<%= user_path(post.user) %>"><%= post.user.name %></a>
         </div>
         <div>
-          <p><%= post.content %></p>
+          <p class="posts-content"><%= post.content.gsub(/\r\n|\r|\n/, "<br>").html_safe %></p>
         </div>
       </div>
     </li>

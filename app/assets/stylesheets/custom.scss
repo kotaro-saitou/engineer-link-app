@@ -3,6 +3,72 @@
 
 body , html {
   height: 100%;
+  background-color: #111111;
+  color: #FFFFFF;
+}
+
+.main-container h1{
+  font-family: 'Sacramento', cursive;
+}
+
+.top-signup{
+  position: relative;
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+  margin-top: 50px;
+  padding: .9em 3.6em;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+  transition: all .3s;
+}
+
+.top-signup::before,
+.top-signup::after {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  z-index: 2;
+  content: '';
+  transition: all .3s;
+}
+.top-signup::before {
+  border-top: 2px solid #3be5ae;
+  border-bottom: 2px solid #3be5ae;
+  transform: scale(0, 1);
+}
+.top-signup::after {
+  border-right: 2px solid #3be5ae;
+  border-left: 2px solid #3be5ae;
+  transform: scale(1, 0);
+}
+.top-signup:hover {
+  color: #3be5ae;
+}
+.top-signup:hover::after,
+.top-signup:hover::before {
+  transform: scale(1);
+}
+
+.main-container{
+  background-image: url('star.jpg');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  height: 500px;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-bottom: 50px;
 }
 
 header{
@@ -13,23 +79,20 @@ header{
   text-align:center;
   height:3em;
   line-height:3em;
-  color:#5F5F5F;
+  color:#F5F5F5;
   font-size:16px;
   margin-bottom: 20px;
+  background-color: transparent;
+  line-height: 50px;
 }
-
 .headerNavBox a{
   text-decoration: none;
-  color: #666;
-}
-
-a{
-  text-decoration: none;
-  color: #666;
+  color: #FFFFFF;
 }
 
 .headerNavBtn:hover{
-  background:#EEE;
+  background-color: rgba(255, 255, 255, .2);
+  transition: 1.0s ;
 }
 
 .tag {
@@ -57,14 +120,25 @@ section.message_box {
   }
 }
 
-div.message_form {
-  //width: 100vw;
-  //position: relative;
-  //left: 50%;
-  //right: 50%;
-  //margin-left: -50vw;
-  //margin-right: -50vw;
-  padding-top: 10px;
+div#message_fixed {
+  position: fixed;            /* フッターの固定 */
+  bottom: 0px;                /* 位置(下0px) */
+  left: 0px;                  /* 位置(左0px) */
+  width: 100%;                /* 横幅100%　*/
+  height: 50px;              /* 縦幅140px */
+}
+
+div#message-bk{
+  background-color:#444;     /* 背景色(黒) */
+	padding: 10px 0 20px;       /* 上10px、下20pxをあける */
+	height: 50px;              /* 縦の高さ140px */
+	width: 100%;                /* 横の幅を100% */
+}
+
+div#message-footer{
+	height: 100%;              /* 縦の表示領域はheader-bkと同じ */
+	width: 800px;              /* 横の幅970px */
+	margin: auto;              /* 中央揃え */
 }
 
 #message_sender {
@@ -76,7 +150,6 @@ div.message_form {
 }
 
 #form{
-  margin-left: 30px;
 }
 
 .messagebox-user{
@@ -95,4 +168,176 @@ div.message_form {
 #message_content{
   font-family: "serif";
   border-bottom: 1px solid #EEEEEE;
+  padding-bottom: 100px;
+}
+
+.top-nav-tabs a{
+  color: #FFFFFF;
+}
+
+.top-nav-tabs a:hover{
+  color: #000000;
+}
+
+.user-nav-tabs a{
+  color: #FFFFFF;
+}
+
+.user-nav-tabs a:hover{
+  color: #000000;
+}
+
+.username{
+  margin-top: 20px;
+}
+
+.username a{
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+footer{
+  margin-top: 100px;
+  border-top: 1px solid #EEEEEE;
+  text-align: center;
+}
+
+.top{
+  margin-top: 50px;
+  background-image: url('ha-to.jpg');
+  background-size: cover;
+  background-position: center center;
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.middle{
+  margin-top: 50px;
+  background-image: url('mail.jpg');
+  background-size: cover;
+  background-position: center center;
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.sita{
+  margin-top: 50px;
+  background-image: url('tags.jpg');
+  background-size: cover;
+  background-position: center center;
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.top .caption {
+	font-size:		130%;
+	color:			#fff;
+	padding-top:		80px;
+	padding-left:		100px;
+}
+.top .mask {
+	width:			100%;
+	height:			100%;
+	position:		absolute;
+	top:			0;
+	left:			0;
+	background-color:	rgba(0,0,0,0.4);
+	-webkit-transition:	all 0.4s ease;
+	transition:		all 0.4s ease;
+	-webkit-transform:	scale(0);	/* 大きさを０にして表示しない */
+	transform:		scale(0);
+}
+
+.top:hover .mask {
+	-webkit-transform:	scale(1);	/* 大きさを１にして表示する */
+	transform:		scale(1);
+}
+
+.middle .caption {
+	font-size:		130%;
+	color:			#fff;
+	padding-top:		80px;
+	padding-left:		100px;
+}
+.middle .mask {
+	width:			100%;
+	height:			100%;
+	position:		absolute;
+	top:			0;
+	left:			0;
+	background-color:	rgba(0,0,0,0.4);
+	-webkit-transition:	all 0.4s ease;
+	transition:		all 0.4s ease;
+	-webkit-transform:	scale(0);	/* 大きさを０にして表示しない */
+	transform:		scale(0);
+}
+
+.middle:hover .mask {
+	-webkit-transform:	scale(1);	/* 大きさを１にして表示する */
+	transform:		scale(1);
+}
+
+.sita .caption {
+	font-size:		130%;
+	color:			#fff;
+	padding-top:		80px;
+	padding-left:		100px;
+}
+.sita .mask {
+	width:			100%;
+	height:			100%;
+	position:		absolute;
+	top:			0;
+	left:			0;
+	background-color:	rgba(0,0,0,0.4);
+	-webkit-transition:	all 0.4s ease;
+	transition:		all 0.4s ease;
+	-webkit-transform:	scale(0);	/* 大きさを０にして表示しない */
+	transform:		scale(0);
+}
+
+.sita:hover .mask {
+	-webkit-transform:	scale(1);	/* 大きさを１にして表示する */
+	transform:		scale(1);
+}
+
+.footer-bottom{
+  display: inline-block;
+}
+
+.card{
+  background-color: #333333;
+}
+
+.card a{
+  color: #FFFFFF;
+}
+
+.posts-content{
+  word-wrap: break-word;
+}
+
+.tweet{
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  color: #FFFFFF;
+  border-top: solid 5px #333333;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+
+.tweet p{
+  margin: 0; 
+  padding: 0;
+  margin-top: 10px;
+}
+
+.tweet a{
+  color: #FFFFFF;
 }
