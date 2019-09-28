@@ -3,9 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Microposts</title>
+    <title>Engineer Link</title>
     <%= csrf_meta_tags %>
-    <!--<%= csp_meta_tag %> -->
+    <%= csp_meta_tag %>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     
     <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -17,29 +19,36 @@
   </head>
 
   <body>
-  
     <div class="container">
+      
+      <div class="main-container">
       <!--header-->
-      <div class="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                  <h1 class='text-center'>Engineer Link</h1>
-                </div>
-            </div>
+        <div class="header">
+          <div class="container">
+              <div class="row">
+                  <div class="col-xs-12">
+                    <h1 class='text-center Engineer-link' style='color:#FFFFFF'>Engineer Link</h1>
+                  </div>
+              </div>
+          </div>
         </div>
-      </div>
       <!--//header-->
       
-      <% if logged_in? %>
-        <%= render 'layouts/navbar_login' %>
-      <% else %>
-        <%= render 'layouts/navbar2' %>
-      <% end %>
+        <% if logged_in? %>
+          <%= render 'layouts/navbar_login' %>
+        <% else %>
+          <%= render 'layouts/navbar2' %>
+        <% end %>
+        
+        <% unless logged_in? %>
+          <a class="top-signup", href="<%= signup_path %>">Sign up</a>
+        <% end %>
+      </div>
       
       <%= render 'layouts/flash_messages' %>
-
+      
       <%= yield %>
+      
     </div>
   </body>
 </html>

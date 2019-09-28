@@ -1,6 +1,6 @@
 <div class="text-center">
   <% if @user.avatar.attached? %>
-    <%= image_tag @user.avatar %>
+    <%= image_tag @user.avatar, size: '150x150' %>
   <% end %>
     <p><%= @user.name %></p>
   <% if current_user.id != @user.id %>
@@ -27,7 +27,7 @@
   </div>
   <div class="col-sm-6">
     <p class='text-center'>詳細</p>
-    <ul class="nav nav-tabs nav-justified mb-3">
+    <ul class="nav nav-tabs nav-justified mb-3 user-nav-tabs">
       <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">Posts</a></li>
       <li class="nav-item"><a href="<%= add_tag_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(add_tag_user_path(@user)) %>">Tags</a></li>
     </ul>

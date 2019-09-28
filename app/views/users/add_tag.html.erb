@@ -1,6 +1,6 @@
 <div class="text-center">
   <% if @user.avatar.attached? %>
-  <%= image_tag @user.avatar %>
+  <%= image_tag @user.avatar, size: '150x150' %>
     <% end %>
   <p><%= @user.name %></p>
   <% if logged_in? && current_user.id == @user.id  %>

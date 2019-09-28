@@ -19,9 +19,13 @@
     $('section.message_box').scrollTop(height + 700);
   </script>
   
-  <div class="message_form">
-    <%= render 'messages/message_form',
-      {from_user: current_user, to_user: @user, room_id: @room_id} %>
+  <div id="message_fixed">
+    <div id="message-bk">
+      <div id="message-footer">
+        <%= render 'messages/message_form',
+          {from_user: current_user, to_user: @user, room_id: @room_id} %>
+      </div>
+    </div>
   </div>
   
 <% end %>

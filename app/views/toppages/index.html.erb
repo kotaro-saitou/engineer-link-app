@@ -1,20 +1,44 @@
 <% if logged_in? %>
   <div class='text-center'>
     <%= image_tag current_user.avatar, size: '75x75', class: 'avatar' if current_user.avatar.attached?%>
-    <h4><%= current_user.name %></h4>
+    <p style="color:#FFFFFF"><%= current_user.name %></p>
   </div>
   
   <ul class="nav nav-tabs nav-justified mb-3 top-nav-tabs">
-    <li class="nav-item"><a href="<%= root_path %>" class="nav-link">マッチング</a></li>
-    <li class="nav-item"><a href="<%= followers_user_path(current_user) %>" class="nav-link">いいねされてる</a></li>
+    <li class="nav-item"><a href="<%= root_path %>" class="nav-link <%= 'active' if current_page?(root_path) %>">マッチング</a></li>
+    <li class="nav-item"><a href="<%= followers_user_path(current_user) %>" class="nav-link <%= 'active' if current_page?(followers_user_path(current_user)) %>">いいねされてる</a></li>
   </ul>
   <%= render 'messages/message_top', users: @users %>
-  
 <% else %>
-  <div class="center jumbotron">
-    <div class="text-center">
-      <h1>Welcome to the Microposts</h1>
-      <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
+  <h3 class="text-center">エンジニア専用の、マッチングアプリ。</h3>
+  <div class='container'>
+    
+    <div class='top'>
+      <div class="mask">
+        <p class="caption">いいね機能</p>
+        <div class="caption">気になるユーザーをいいねしよう！<br>いいねが返ってきたらメッセージのやりとりができます</div>
+      </div>
     </div>
+    
+    <div class=middle>
+      <div class="mask">
+        <p class="caption">ダイレクトメッセージ機能</p>
+        <div class="caption">気になるユーザーにメッセージを送ってみよう！<br>技術の話でも相談でも！</div>
+      </div>
+    </div>
+    
+    <div class='sita'>
+      <div class="mask">
+        <p class="caption">タグ機能、つぶやき機能</p>
+        <div class="caption">自分の得意な技術のタグに参加したり、つぶやいてみよう！</br>タグやつぶやきから気になるユーザーを探せます</div>
+      </div>
+    </div>
+    
+    <a class="top-signup signup", href="<%= signup_path %>">Sign up</a>
+    
+    <p class="text-center">or</p>
+
+    <a class="top-signup login", href="<%= login_path %>">Login</a>
+
   </div>
 <% end %>

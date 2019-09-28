@@ -1,9 +1,9 @@
 <div class='row'>
   <% tags.each do |tag| %>
-    <div class="col-lg-2 col-md-3 col-sm-6 col-xs-6 text-center">
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 text-center">
       <div class="card mb-3">
         <div class="card-header">
-            <%= link_to tag.title, tag_path(tag) %>
+            <a href="<%= tag_path(tag) %>"><%= tag.title %></a>
         </div>
         <div class="card-body">
           <% if tag.image.attached? %>
