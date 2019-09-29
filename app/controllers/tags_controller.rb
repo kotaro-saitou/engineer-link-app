@@ -26,7 +26,7 @@ class TagsController < ApplicationController
   def destroy
     @tag.destroy
     flash[:success] = '投稿を削除しました'
-    redirect_back(fallback_location: root_path)
+    redirect_to tags_path
   end
   
   private

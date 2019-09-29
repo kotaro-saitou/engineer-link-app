@@ -6,6 +6,6 @@ class Tag < ApplicationRecord
   
   has_one_attached :image
   
-  has_many :tag_relations
+  has_many :tag_relations, dependent: :destroy
   has_many :added_user, through: :tag_relations, source: :user
 end
