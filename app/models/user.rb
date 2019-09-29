@@ -7,8 +7,8 @@ class User < ApplicationRecord
   has_secure_password
   
   has_one_attached :avatar
-  has_many :posts
-  has_many :tags
+  has_many :posts, dependent: :destroy
+  has_many :tags, dependent: :destroy
   
   has_many :tag_relations
   has_many :adding_tags, through: :tag_relations, source: :tag
