@@ -8,7 +8,12 @@
         <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
       <% end %>
     <% else %>
-      <p>ログインしよ</p>
+      <p class="text-center">呟くにはログインが必要です</p>
+      <a class="top-signup signup", href="<%= signup_path %>">Sign up</a>
+    
+      <p class="text-center">or</p>
+
+      <a class="top-signup login", href="<%= login_path %>">Login</a>
     <% end %>
   </aside>
   <div class="col-sm-8">

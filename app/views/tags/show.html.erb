@@ -8,7 +8,7 @@
     
       <p><%= @tag.content %></p>
       
-      <%= render 'tag_relations/tag_add_button', tag: @tag %>
+      <%= render 'tag_relations/tag_add_button', tag: @tag if logged_in? %>
       
       <% if logged_in? && current_user.id == @tag.user.id %>
         <%= link_to 'タグ削除', tag_path(@tag), method: :delete, class: 'btn btn-danger' %>

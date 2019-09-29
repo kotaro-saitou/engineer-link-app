@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :correct_user, only: [:destroy]
   
   def index
-    @post = current_user.posts.build
+    @post = current_user.posts.build if logged_in?
     @posts = Post.all.order(created_at: :desc).page(params[:page])
   end
   

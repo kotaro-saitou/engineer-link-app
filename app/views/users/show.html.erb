@@ -3,7 +3,7 @@
     <%= image_tag @user.avatar, size: '150x150' %>
   <% end %>
     <p><%= @user.name %></p>
-  <% if current_user.id != @user.id %>
+  <% if logged_in? && current_user.id != @user.id %>
     <%= render 'relationships/follow_button', user: @user %>
   <% end %>
   <% if logged_in? && current_user.id == @user.id  %>

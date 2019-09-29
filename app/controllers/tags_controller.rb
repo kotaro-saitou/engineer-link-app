@@ -2,7 +2,7 @@ class TagsController < ApplicationController
   before_action :correct_user, only: [:destroy]
   
   def index
-    @tag = current_user.tags.build
+    @tag = current_user.tags.build if logged_in?
     @tags = Tag.all.order(created_at: :desc).page(params[:page])
   end
 

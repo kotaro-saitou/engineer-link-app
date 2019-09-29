@@ -1,4 +1,4 @@
-<% if current_user.adding?(tag) %>
+<% current_user.adding?(tag) %>
   <%= form_with(model: current_user.tag_relations.find_by(tag_id: tag.id), local: true, method: :delete) do |f| %>
     <%= hidden_field_tag :tag_id, tag.id %>
     <%= f.submit '不参加', class: 'btn btn-danger' %>
