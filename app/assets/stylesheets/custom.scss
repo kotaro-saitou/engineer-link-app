@@ -57,7 +57,7 @@ body , html {
 }
 
 .main-container{
-  background-image: url('star.jpg');
+  background-image: image-url('star.jpg');
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
@@ -204,7 +204,7 @@ footer{
 
 .top{
   margin-top: 50px;
-  background-image: url('ha-to.jpg');
+  background-image: image-url('ha-to.jpg');
   background-size: cover;
   background-position: center center;
   height: 500px;
@@ -215,7 +215,7 @@ footer{
 
 .middle{
   margin-top: 50px;
-  background-image: url('mail.jpg');
+  background-image: image-url('mail.jpg');
   background-size: cover;
   background-position: center center;
   height: 500px;
@@ -226,7 +226,7 @@ footer{
 
 .sita{
   margin-top: 50px;
-  background-image: url('tags.jpg');
+  background-image: image-url('tags.jpg');
   background-size: cover;
   background-position: center center;
   height: 500px;
