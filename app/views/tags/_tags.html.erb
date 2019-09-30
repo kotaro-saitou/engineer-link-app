@@ -1,18 +1,20 @@
-<div class='row'>
-  <% tags.each do |tag| %>
-    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 text-center">
-      <div class="card mb-3">
-        <div class="card-header">
-            <a href="<%= tag_path(tag) %>"><%= tag.title %></a>
-        </div>
-        <div class="card-body">
-          <% if tag.image.attached? %>
-            <%= image_tag tag.image, size: '150x150' %>
-          <% else %>
-            No image
-          <% end %>
+<% if tags.any? %>  
+  <div class='row'>
+    <% tags.each do |tag| %>
+      <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 text-center">
+        <div class="card mb-3">
+          <div class="card-header">
+              <a href="<%= tag_path(tag) %>"><%= tag.title %></a>
+          </div>
+          <div class="card-body">
+            <% if tag.image.attached? %>
+              <%= image_tag tag.image, size: '150x150' %>
+            <% else %>
+              No image
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
+<% end %>

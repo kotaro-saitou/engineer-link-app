@@ -3,7 +3,7 @@ class TagsController < ApplicationController
   
   def index
     @tag = current_user.tags.build if logged_in?
-    @tags = Tag.all.order(created_at: :desc).page(params[:page])
+    @tags = Tag.all.order(created_at: :desc).page(params[:page]).per(25)
   end
 
   def show
@@ -17,7 +17,7 @@ class TagsController < ApplicationController
       flash[:success] = '投稿しました！'
       redirect_to @tag
     else
-      @tags = Tag.all.order(created_at: :desc).page(params[:page])
+      @tags = Tag.all.order(created_at: :desc).page(params[:page]).per(25)
       flash.now[:danger] = '投稿に失敗しました。'
       render 'toppages/index'
     end

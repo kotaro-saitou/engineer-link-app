@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     if @post.save
       flash[:success] = 'メッセージを投稿しました！'
-      redirect_to @post
+      redirect_to posts_path
     else
       @posts = Post.all.order(created_at: :desc).page(params[:page])
       flash.now[:danger] = 'メッセージの投稿に失敗しました。'
