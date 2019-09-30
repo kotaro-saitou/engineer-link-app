@@ -8,7 +8,7 @@ class TagsController < ApplicationController
 
   def show
     @tag = Tag.find(params[:id])
-    @users = @tag.added_user
+    @users = @tag.added_user.page(params[:page]).per(25)
   end
 
   def create
