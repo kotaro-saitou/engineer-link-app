@@ -10,7 +10,19 @@
   </ul>
   <%= render 'messages/message_top', users: @users %>
 <% else %>
-  <h3 class="text-center" style="font-size: 16px">エンジニア専用のマッチングアプリ。</h3>
+  <div class="site-description text-center">
+    <h3 style="font-size: 16px">エンジニア専用のマッチングアプリ。</h3>
+    <p class='mt-5'>■ ■ ■このWEBサイトについて ■ ■ ■</p>
+    <p>ツイッターなどでは気の合うエンジニアと繋がれない...</p>
+    <p>なかなかエンジニア仲間ができない...</p>
+    <p class="mb-5">Engineer Linkでは、気の合うエンジニアに気軽にメッセージを送れます。</p>
+    <p class='mt-5'>■ ■ ■ テストログイン ■ ■ ■</p>
+    <p>Email : test@test.com</p>
+    <p>Password : password</p>
+  </div>
+  
+  <a class="top-signup login", href="<%= login_path %>">Login</a>
+  
   <div class='top' ontouchstart="">
     <div class="mask">
       <p class="caption text-center">いいね機能</p>
