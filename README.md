@@ -1,24 +1,20 @@
-# README
+Engineer Linkは、エンジニアとエンジニアが気軽にメッセージを送りあえるサービスです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+【主な機能】
+・画像付きユーザー登録機能
+・（ログイン時）フォロー/アンフォロー機能
+・記事の投稿機能
+・タグ（Ruby、Pythonなどの自分の好きな技術など）の画像付き投稿機能
+・相互フォローのみリアルタイムメッセージ機能
+・記事、タグ、ユーザー一覧でのページネーション機能
 
-Things you may want to cover:
+【技術】
+・Rails5.2.2
+・Ruby2.5.4
+・Rspec
+・Heroku
+・AmazonS3（プロフィール画像、タグの画像）
+・ActionCable（リアルタイムチャット）
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+【工夫】
+・開発スピードを意識し、機能実装は1週間で終えた
