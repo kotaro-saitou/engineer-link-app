@@ -5,6 +5,9 @@
       <div class="media-body">
         <div>
           <a href="<%= user_path(post.user) %>"><%= post.user.name %></a>
+          <% if current_user == post.user %>
+            <%= link_to "delete", post_path(post), method: :delete, data: {confirm: "削除してよろしいですか？"} %>
+          <% end %>
         </div>
         <div>
           <p class="posts-content"><%= post.content.gsub(/\r\n|\r|\n/, "<br>").html_safe %></p>
