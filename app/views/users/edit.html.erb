@@ -9,7 +9,7 @@
       <%= render 'layouts/error_messages', model: f.object %>
       
       <div class="form-group">
-        <%= f.label :avatar, 'Name' %>
+        <%= f.label :avatar, 'avatar' %>
         <%= f.file_field :avatar, class: 'form-control' %>
       </div>
       
@@ -38,7 +38,7 @@
         <%= f.password_field :password_confirmation, class: 'form-control' %>
       </div>
 
-      <%= f.submit 'Sign up', class: 'btn btn-primary btn-block' %>
+      <%= f.submit '編集', class: 'btn btn-primary btn-block' %>
     <% end %>
   </div>
 </div>

@@ -1,7 +1,8 @@
 <ul class="list-unstyled">
   <% posts.each do |post| %>
     <li class="media mb-3 tweet">
-      <%= image_tag post.user.avatar, size: '50x50', class: 'avatar' %>
+      
+      <%= image_tag post.user.avatar, size: '50x50', class: 'avatar' if post.user.avatar.attached? %>
       <div class="media-body">
         <div>
           <a href="<%= user_path(post.user) %>"><%= post.user.name %></a>
