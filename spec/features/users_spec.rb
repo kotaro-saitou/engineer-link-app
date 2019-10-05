@@ -98,4 +98,20 @@ RSpec.feature "Users", type: :feature do
     expect(page).to have_content "other"
     page.has_link? "other"
   end
+  
+  scenario "相互フォローやフォローされている人がいない場合、いないことをメッセージで表示されている" do
+    user = FactoryBot.create(:user)
+    
+    visit root_path
+    click_link "ログイン"
+    fill_in "Email", with: user.email
+    fill_in "Password", with: user.password
+    click_button "Log in"
+    
+    visit root_path
+    expect(page).to have_content "マッチング中のユーザーはいません。"
+    
+    visit followers_user_path user
+    expect(page).to have_content "いいねされている人はいません"
+  end
 end

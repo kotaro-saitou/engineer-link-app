@@ -43,13 +43,10 @@ RSpec.describe User, type: :model do
     it "自分ではないユーザーのフォローとアンフォローができる" do
         
       other_user = FactoryBot.create(:user, email: "test2@test.com")
-        
       @user.follow(other_user)
-      
       expect(@user.following?(other_user)).to be true
       
       @user.unfollow(other_user)
-      
       expect(@user.following?(other_user)).to be false
     end
     
