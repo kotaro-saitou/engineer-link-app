@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   
   def index
     @post = current_user.posts.build if logged_in?
-    @posts = Post.all.order(created_at: :desc).page(params[:page])
+    @posts = Post.search(params[:search]).order(created_at: :desc).page(params[:page])
   end
   
   def show

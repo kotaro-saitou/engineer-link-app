@@ -4,7 +4,7 @@ class TagsController < ApplicationController
   
   def index
     @tag = current_user.tags.build if logged_in?
-    @tags = Tag.all.order(created_at: :desc).page(params[:page]).per(25)
+    @tags = Tag.search(params[:search]).order(created_at: :desc).page(params[:page]).per(25)
   end
 
   def show

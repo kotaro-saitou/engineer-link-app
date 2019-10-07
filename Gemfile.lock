@@ -275,7 +275,7 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   bootstrap-sass (= 3.3.7)
   byebug
-  capybara (>= 2.15)
+  capybara (>= 2.5.0)
   chromedriver-helper
   coffee-rails (~> 4.2)
   factory_bot_rails (~> 4.10.0)
