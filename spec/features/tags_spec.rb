@@ -79,4 +79,17 @@ RSpec.feature "Tags", type: :feature do
       expect(page).to have_content "タグ参加をやめました"
     }.to change(tag.added_user, :count).by(-1)
   end
+  
+  scenario "検索機能" do
+    FactoryBot.create(:tag)
+    FactoryBot.create(:tag, title: "search")
+    
+    visit tags_path
+    
+    fill_in('検索', with: "search")
+    click_button "検索"
+    
+    expect(page).to have_content "search"
+    expect(page).to_not have_content "content"
+  end
 end

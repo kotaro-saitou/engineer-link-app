@@ -8,4 +8,9 @@ class Tag < ApplicationRecord
   
   has_many :tag_relations, dependent: :destroy
   has_many :added_user, through: :tag_relations, source: :user
+  
+  def self.search(search)
+    Tag.all unless search
+    Tag.where(['title LIKE ?', "%#{search}%"])
+  end
 end

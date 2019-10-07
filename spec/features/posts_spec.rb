@@ -62,4 +62,17 @@ RSpec.feature "Posts", type: :feature do
     
   end
   
+  scenario "検索機能" do
+    FactoryBot.create(:post)
+    FactoryBot.create(:post, content: "search")
+    
+    visit posts_path
+    
+    fill_in('検索', with: "search")
+    click_button "検索"
+    
+    expect(page).to have_content "search"
+    expect(page).to_not have_content "content"
+  end
+  
 end
