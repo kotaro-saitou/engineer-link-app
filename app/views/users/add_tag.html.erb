@@ -27,6 +27,7 @@
       <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">Posts</a></li>
       <li class="nav-item"><a href="<%= add_tag_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(add_tag_user_path(@user)) %>">Tags</a></li>
     </ul>
+    <a class="top-signup", href="<%= tags_path %>">タグ一覧へ</a>
     <%= render 'tags/tags', tags: @user.adding_tags %>
   </div>
 </div>

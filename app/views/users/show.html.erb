@@ -31,6 +31,7 @@
       <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">Posts</a></li>
       <li class="nav-item"><a href="<%= add_tag_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(add_tag_user_path(@user)) %>">Tags</a></li>
     </ul>
+    <a class="top-signup", href="<%= posts_path %>">投稿画面へ</a>
     <%= render 'posts/posts', posts: @posts %>
   </div>
 </div>
