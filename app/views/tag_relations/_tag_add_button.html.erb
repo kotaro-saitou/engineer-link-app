@@ -1,11 +1,13 @@
-<% if current_user.adding?(tag) %>
-  <%= form_with(model: current_user.tag_relations.find_by(tag_id: tag.id), local: true, method: :delete) do |f| %>
-    <%= hidden_field_tag :tag_id, tag.id %>
-    <%= f.submit '不参加', class: 'btn btn-danger' %>
+<div class="tag-button">
+  <% if current_user.adding?(tag) %>
+    <%= form_with(model: current_user.tag_relations.find_by(tag_id: tag.id), local: true, method: :delete) do |f| %>
+      <%= hidden_field_tag :tag_id, tag.id %>
+      <%= f.submit '不参加', class: 'btn btn-danger' %>
+    <% end %>
+  <% else %>
+    <%= form_with(model: current_user.tag_relations.build, local: true) do |f| %>
+      <%= hidden_field_tag :tag_id, tag.id %>
+      <%= f.submit '参加', class: 'btn btn-primary' %>
+    <% end %>
   <% end %>
-<% else %>
-  <%= form_with(model: current_user.tag_relations.build, local: true) do |f| %>
-    <%= hidden_field_tag :tag_id, tag.id %>
-    <%= f.submit '参加', class: 'btn btn-primary' %>
-  <% end %>
-<% end %>
+</div>

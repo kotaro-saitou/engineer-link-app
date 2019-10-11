@@ -103,6 +103,15 @@ header{
   margin-top: 50px;
 }
 
+.tag-button {
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.tag-delete-button {
+  margin-bottom: 20px;
+}
+
 .top-nav-tabs{
   margin-top: 30px;
 }
@@ -121,24 +130,24 @@ section.message_box {
 }
 
 div#message_fixed {
-  position: fixed;            /* フッターの固定 */
-  bottom: 0px;                /* 位置(下0px) */
-  left: 0px;                  /* 位置(左0px) */
-  width: 100%;                /* 横幅100%　*/
-  height: 50px;              /* 縦幅140px */
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 50px;
 }
 
 div#message-bk{
-  background-color:#444;     /* 背景色(黒) */
-	padding: 10px 0 20px;       /* 上10px、下20pxをあける */
-	height: 50px;              /* 縦の高さ140px */
-	width: 100%;                /* 横の幅を100% */
+  background-color:#444;
+	padding: 10px 0 20px;
+	height: 50px;
+	width: 100%;
 }
 
 div#message-footer{
-	height: 100%;              /* 縦の表示領域はheader-bkと同じ */
-	width: 800px;              /* 横の幅970px */
-	margin: auto;              /* 中央揃え */
+	height: 100%;
+	width: 800px; 
+	margin: auto;
 }
 
 #message_sender {
@@ -147,9 +156,6 @@ div#message-footer{
 
 #message_content {
   font-size: 1.0em;
-}
-
-#form{
 }
 
 .messagebox-user{
@@ -194,13 +200,6 @@ div#message-footer{
 .username a{
   text-decoration: none;
   color: #FFFFFF;
-}
-
-footer{
-  margin-top: 100px;
-  margin-bottom: 10px;
-  border-top: 1px solid #EEEEEE;
-  text-align: center;
 }
 
 .top{
@@ -251,12 +250,12 @@ footer{
 	background-color:	rgba(0,0,0,0.4);
 	-webkit-transition:	all 0.4s ease;
 	transition:		all 0.4s ease;
-	-webkit-transform:	scale(0);	/* 大きさを０にして表示しない */
+	-webkit-transform:	scale(0);	
 	transform:		scale(0);
 }
 
 .top:hover .mask {
-	-webkit-transform:	scale(1);	/* 大きさを１にして表示する */
+	-webkit-transform:	scale(1);
 	transform:		scale(1);
 }
 
@@ -274,12 +273,12 @@ footer{
 	background-color:	rgba(0,0,0,0.4);
 	-webkit-transition:	all 0.4s ease;
 	transition:		all 0.4s ease;
-	-webkit-transform:	scale(0);	/* 大きさを０にして表示しない */
+	-webkit-transform:	scale(0);
 	transform:		scale(0);
 }
 
 .middle:hover .mask {
-	-webkit-transform:	scale(1);	/* 大きさを１にして表示する */
+	-webkit-transform:	scale(1);
 	transform:		scale(1);
 }
 
@@ -288,6 +287,7 @@ footer{
 	color:			#fff;
 	padding-top:		80px;
 }
+
 .sita .mask {
 	width:			100%;
 	height:			100%;
@@ -297,12 +297,12 @@ footer{
 	background-color:	rgba(0,0,0,0.4);
 	-webkit-transition:	all 0.4s ease;
 	transition:		all 0.4s ease;
-	-webkit-transform:	scale(0);	/* 大きさを０にして表示しない */
+	-webkit-transform:	scale(0);
 	transform:		scale(0);
 }
 
 .sita:hover .mask {
-	-webkit-transform:	scale(1);	/* 大きさを１にして表示する */
+	-webkit-transform:	scale(1);
 	transform:		scale(1);
 }
 
@@ -350,4 +350,11 @@ footer{
 
 .search-button{
   margin-bottom: 30px;
+}
+
+footer{
+  margin-top: 100px;
+  margin-bottom: 10px;
+  border-top: 1px solid #EEEEEE;
+  text-align: center;
 }
