@@ -21,7 +21,7 @@
   <body>
     <div class="container">
       
-      <% if current_page?(root_path) || current_page?(followers_user_path(current_user)) %>
+      <% if current_page?(root_path) || logged_in? && current_page?(followers_user_path(current_user)) %>
         <div class='top-wrapper'>
           <%= render 'layouts/header' %>
         </div>
