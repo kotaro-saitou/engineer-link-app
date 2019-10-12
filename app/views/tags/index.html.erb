@@ -1,10 +1,11 @@
 <h2 class='text-center tag'>タグ一覧</h2>
+<h4 class="text-center">タグに参加して、自分の好きをアピールしよう</h4>
 <div class="row">
   <div class="col-6 offset-3">
     <%= form_tag(tags_path, method: :get) do %>
       <div class="form-group">
         <%= label_tag :search, '検索', class: 'search-label' %>
-        <%= text_field_tag :search,"", class:"form-control" , placeholder: 'キーワードを入力'%>
+        <%= text_field_tag :search, params[:search], class:"form-control" , placeholder: 'キーワードを入力'%>
       </div>
       <%= submit_tag '検索', class: "btn btn-primary btn-block search-button" %>
     <% end %>
@@ -15,6 +16,7 @@
 <div class="row tag-form">
   <aside class="col-sm-6 offset-sm-3">
     <% if logged_in? %>
+      <h4 class="text-center">タグを追加して仲間を増やそう</h4>
       <%= form_with(model: @tag, local: true) do |f| %>
         <div class="form-group"> 
           <%= f.label :title, 'タグ名' %>

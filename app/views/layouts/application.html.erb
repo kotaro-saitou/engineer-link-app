@@ -20,32 +20,16 @@
 
   <body>
     <div class="container">
-    
-      <div class="main-container">
-      <!--header-->
-        <div class="header">
-          <div class="container">
-              <div class="row">
-                  <div class="col-xs-12">
-                    <h1 class='text-center Engineer-link' style='color:#FFFFFF'>Engineer Link</h1>
-                  </div>
-              </div>
-          </div>
+      
+      <% if current_page?(root_path) || current_page?(followers_user_path(current_user)) %>
+        <div class='top-wrapper'>
+          <%= render 'layouts/header' %>
         </div>
-        
-      <!--//header-->
-      
-        <% if logged_in? %>
-          <%= render 'layouts/navbar_login' %>
-        <% else %>
-          <%= render 'layouts/navbar' %>
-        <% end %>
-        
-        <% unless logged_in? %>
-          <a class="top-signup", href="<%= signup_path %>">Sign up</a>
-        <% end %>
-      </div>
-      
+      <% else %>
+        <div class="nav">
+          <%= render 'layouts/header' %>
+        </div>
+      <% end %>
       <%= render 'layouts/flash_messages' %>
       
       <%= yield %>
