@@ -11,6 +11,10 @@ body , html {
   font-family: 'Sacramento', cursive;
 }
 
+.nav {
+  margin-bottom: 100px;
+}
+
 .top-signup{
   position: relative;
   display: inline-block;
@@ -56,7 +60,7 @@ body , html {
   transform: scale(1);
 }
 
-.main-container{
+.top-wrapper{
   background-image: image-url('star.jpg');
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -116,8 +120,13 @@ header{
   margin-top: 30px;
 }
 
+.image-fit {
+  object-fit: cover;
+}
+
 .avatar{
   margin-right: 10px;
+  object-fit: cover;
 }
 
 section.message_box {

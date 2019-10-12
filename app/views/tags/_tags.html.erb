@@ -8,7 +8,7 @@
           </div>
           <div class="card-body">
             <% if tag.image.attached? %>
-              <%= image_tag tag.image, size: '150x150' %>
+              <%= image_tag tag.image, size: '150x150', class: "image-fit" %>
             <% else %>
               No image
             <% end %>
