@@ -11,11 +11,13 @@ Engineer Linkは、エンジニアとエンジニアが気軽にメッセージ�
 ## 技術  
 ・Rails5.2.2  
 ・Ruby2.5.4  
+・CircleCI  
 ・Rspec  
 ・Heroku  
 ・AmazonS3（プロフィール画像、タグの画像）  
 ・ActionCable（リアルタイムチャット) 
 
 ## 工夫  
+・CircleCIを用いて自動デプロイを実装  
 ・Githubでissue管理を行なった  
 ・開発スピードを意識し、機能実装は1週間で終えた
