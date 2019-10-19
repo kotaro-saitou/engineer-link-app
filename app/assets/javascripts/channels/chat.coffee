@@ -21,7 +21,7 @@ messages_height = ->
   temp = 0;
   $("div.message").each ->
     temp += ($(this).height());
-  return temp
+  return temp + 500
 
 document.addEventListener 'turbolinks:request-start', ->
   if room_ch()?

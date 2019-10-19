@@ -10,7 +10,7 @@
             <% if user.avatar.attached? %>
               <p><%= image_tag user.avatar, size: '100x100' %></p>
             <% else %>
-              No image
+              <p>No image</p>
             <% end %>
             <%= link_to 'メッセージ', message_path(user), class: 'btn btn-primary'%>
           </div>
