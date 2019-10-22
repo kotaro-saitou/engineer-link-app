@@ -15,7 +15,7 @@ RSpec.feature "Tags", type: :feature do
     
     expect{
       fill_in "タグ名", with: "test tag"
-      fill_in "紹介文", with: "test content"
+      fill_in "好きをアピール or 一言コメント", with: "test content"
       click_button "投稿"
       
       expect(page).to have_content "投稿しました！"
